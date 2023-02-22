@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_text_background"
+    android:elevation="@dimen/padding10dp"
+    android:layout_marginLeft="@dimen/padding10dp"
+    android:layout_marginRight="@dimen/padding10dp"
+    android:layout_marginTop="@dimen/padding10dp">
+    
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/layoutItemForSale"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <ImageView
+           android:id="@+id/imageProduct"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/squarebackground"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           />
+       <TextView
+           android:id="@+id/nameProduct"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textStyle="bold"
+           android:textSize="12sp"
+           app:layout_constraintStart_toEndOf="@id/imageProduct"
+           android:layout_marginStart="@dimen/margin20dp"
+           app:layout_constraintTop_toTopOf="parent"
+          />
+       
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/buttonProduct"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Add"
+           android:backgroundTint="@color/green_version1"
+           app:layout_constraintEnd_toEndOf="parent"
+           android:layout_marginEnd="@dimen/padding10dp"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"/>
+           
+   </androidx.constraintlayout.widget.ConstraintLayout>
+       
+    
+    
+    
+</com.google.android.material.card.MaterialCardView>
+    
+</layout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/item1"
+            android:icon="@drawable/hrsalesicon"
+            android:title="Sales"/>
+        <item android:id="@+id/item2"
+            android:title="Check in/Out"
+            android:icon="@drawable/checkinicon"/>
+        <item android:id="@+id/item3"
+            android:icon="@drawable/orders"
+            android:title="Orders"/>
+        <item android:id="@+id/item4"
+            android:icon="@drawable/attendanceicon"
+            android:title="Attendance"/>
+        <item android:id="@+id/item5"
+            android:icon="@drawable/visiticon"
+            android:title="Visit"/>
+        <item android:id="@+id/item6"
+            android:icon="@drawable/partyicon"
+            android:title="Party"/>
+        <item android:id="@+id/item7"
+            android:icon="@drawable/storeicon"
+            android:title="Store"/>
+        <item android:id="@+id/item8"
+            android:icon="@drawable/collectionicon"
+            android:title="Collection"/>
+        <item android:id="@+id/item9"
+            android:icon="@drawable/ledgericon"
+            android:title="Ledger"/>
+        <item android:id="@+id/item10"
+            android:icon="@drawable/logout"
+            android:title="Logout"/>
+
+    </group>
+
+</menu>

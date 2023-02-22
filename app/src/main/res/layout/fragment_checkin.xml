@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CheckinFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayoutHome"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/blue_version1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <ImageView
+                android:id="@+id/appBarIconBackHomeFragment"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin20dp"
+                android:src="@drawable/icon_appbar_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textMarkAttendance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20dp"
+                android:text="@string/mark_attendance"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/appBarIconBackHomeFragment"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="@dimen/margin30dp"
+                android:layout_height="@dimen/margin30dp"
+                android:layout_marginEnd="55dp"
+                android:src="@drawable/icon_person"
+                app:layout_constraintBottom_toTopOf="@+id/nameProfile"
+                android:layout_marginTop="@dimen/padding10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/nameProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginEnd="36dp"
+                android:background="@drawable/whiterectangularbackground"
+                android:paddingStart="@dimen/padding10dp"
+                android:paddingEnd="@dimen/padding10dp"
+                android:text="Manish"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageProfile" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/dateAndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 Feb 2023 Monday 10:00 AM"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayoutHome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue_version1"/>
+
+    <View
+        android:id="@+id/dividerLine1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blue_version1"
+        app:layout_constraintTop_toBottomOf="@id/dateAndTime"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCheckIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_version1"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine1"
+        android:layout_marginTop="@dimen/padding10dp"
+        android:text="Check In"
+        android:drawableEnd="@drawable/ic_downarrow"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/margin20dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCheckOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red_disabled"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine1"
+        android:layout_marginTop="@dimen/padding10dp"
+        android:text="Check Out"
+        android:drawableEnd="@drawable/ic_uparrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin20dp"/>
+
+    <View
+        android:id="@+id/dividerLine2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blue_version1"
+        app:layout_constraintTop_toBottomOf="@id/btnCheckOut"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/checkinRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="2dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/row_item_garage_checked_in"/>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/checkinRecyclerView"
+        android:layout_marginTop="@dimen/padding10dp"
+        android:backgroundTint="@color/cream_shade2"
+        android:layout_marginStart="@dimen/padding10dp"
+        android:layout_marginEnd="@dimen/padding10dp"
+        app:cardCornerRadius="@dimen/padding5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topPanelAddressCard"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/blue_version1">
+
+                <TextView
+                    android:id="@+id/textCreateVisit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create_visit"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/padding10dp"/>
+
+             <!--   <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bata Chowk, Patna"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:drawableEnd="@drawable/ic_location"
+                    android:drawablePadding="@dimen/padding5dp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/padding10dp"/> <!-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llShopName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20dp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/topPanelAddressCard"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/shopName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/blue_version1"
+                    android:textSize="14sp"
+                    android:layout_marginStart="@dimen/padding8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextShopName"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/height50dp"
+                    android:layout_marginStart="50dp"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="@dimen/padding10dp"
+                    app:layout_constraintStart_toEndOf="@id/shopName"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llShopOwnerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/llShopName"
+                android:layout_marginTop="@dimen/padding10dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/shopOwnerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Owner"
+                    android:paddingEnd="10dp"
+                    android:layout_marginStart="@dimen/padding8dp"
+                    android:textColor="@color/blue_version1"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextShopOwnerName"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/height50dp"
+                    android:layout_marginStart="60dp"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="@dimen/padding10dp"
+                    app:layout_constraintStart_toEndOf="@id/shopOwnerName"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llShopPinCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/llShopOwnerName"
+                android:layout_marginTop="@dimen/padding10dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/shopPinCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pin Code"
+                    android:layout_marginStart="@dimen/padding8dp"
+                    android:paddingEnd="@dimen/padding10dp"
+                    android:textColor="@color/blue_version1"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextShopPinCode"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/height50dp"
+                    android:layout_marginStart="80dp"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="@dimen/padding10dp"
+                    app:layout_constraintStart_toEndOf="@id/shopPinCode"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llVisitPurpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/llShopPinCode"
+                android:layout_marginTop="@dimen/padding10dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/visitPurpose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visit Purpose"
+                    android:paddingEnd="@dimen/padding10dp"
+                    android:textColor="@color/blue_version1"
+                    android:textSize="14sp"
+                    android:layout_marginStart="@dimen/padding8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextVisitPurpoe"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/height50dp"
+                    android:layout_marginStart="52dp"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="@dimen/padding10dp"
+                    app:layout_constraintStart_toEndOf="@id/visitPurpose"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llShopMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/llVisitPurpose"
+                android:layout_marginTop="@dimen/padding10dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/shopMobileNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Number"
+                    android:layout_marginStart="@dimen/padding8dp"
+                    android:paddingEnd="@dimen/padding10dp"
+                    android:textColor="@color/blue_version1"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextShopMobileNumber"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/height50dp"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="@dimen/padding10dp"
+                    app:layout_constraintStart_toEndOf="@id/shopMobileNumber"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llAddImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/llShopMobileNumber"
+                android:layout_marginTop="@dimen/padding10dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/addImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Image"
+                    android:layout_marginStart="@dimen/padding8dp"
+                    android:paddingEnd="@dimen/padding10dp"
+                    android:textColor="@color/blue_version1"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/uploadFiles1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="68dp"
+                    android:src="@drawable/pdf"
+                    app:layout_constraintStart_toEndOf="@id/addImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/uploadFiles2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="22dp"
+                    android:src="@drawable/pdf"
+                    app:layout_constraintStart_toEndOf="@id/uploadFiles1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/uploadFiles3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="22dp"
+                    android:src="@drawable/pdf"
+                    app:layout_constraintStart_toEndOf="@id/uploadFiles2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llCheckin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/llAddImage"
+                android:layout_marginTop="@dimen/padding10dp"
+                android:layout_marginEnd="@dimen/padding10dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/textCheckin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check in"
+                    android:layout_marginStart="@dimen/padding8dp"
+                    android:paddingEnd="@dimen/padding10dp"
+                    android:textColor="@color/blue_version1"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCheckInIntoGarage"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/green_version1"
+                    app:layout_constraintStart_toEndOf="@id/textCheckin"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Check In"
+                    android:drawableEnd="@drawable/ic_downarrow"
+                    />
+
+              <!--  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCheckOutGarage"
+                    android:layout_width="140dp"
+                    android:layout_marginStart="@dimen/padding5dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/red_disabled"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Check Out"
+                    android:textAllCaps="false"
+                    android:drawableEnd="@drawable/ic_uparrow"
+                    app:layout_constraintStart_toEndOf="@id/btnCheckInIntoGarage"
+                    /> <!-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOrders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="@dimen/margin20dp"
+                android:backgroundTint="@color/blue_version1"
+                android:text="Orders"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llCheckin" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue_version1"
+                android:layout_marginTop="@dimen/margin20dp"
+                app:layout_constraintTop_toBottomOf="@id/llCheckin"
+                app:layout_constraintStart_toEndOf="@id/btnOrders"
+                android:text="Submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/margin20dp"/>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

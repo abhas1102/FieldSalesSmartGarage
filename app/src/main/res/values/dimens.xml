@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="enter_your_mobile_number">22sp</dimen>
+    <dimen name="login_button">60dp</dimen>
+    <dimen name="cancel_button_width">100dp</dimen>
+    <dimen name="cancel_button_height">60dp</dimen>
+    <dimen name="margin20dp">20dp</dimen>
+    <dimen name="cornerRadius10dp">10dp</dimen>
+    <dimen name="padding10dp">10dp</dimen>
+    <dimen name="height50dp">50dp</dimen>
+    <dimen name="padding5dp">5dp</dimen>
+    <dimen name="padding8dp">8dp</dimen>
+    <dimen name="margin30dp">30dp</dimen>
+    <dimen name="btntxtsize">18sp</dimen>
+    <dimen name="height60dp">60dp</dimen>
+    <dimen name="textsizein20sp">20sp</dimen>
+    <dimen name="textsizeinsp22">22sp</dimen>
+</resources>

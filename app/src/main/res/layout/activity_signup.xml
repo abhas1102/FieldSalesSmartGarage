@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signup_screen_background"
+
+    tools:context=".view.SignupActivity">
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pikpartlogo"
+        android:layout_marginTop="@dimen/height50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/textManagerSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manager_signup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageLogo"
+        android:layout_marginTop="@dimen/height50dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="26sp"/>
+
+    <ImageView
+        android:id="@+id/imageCentre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loginscreencentralimage"
+        app:layout_constraintTop_toBottomOf="@id/textManagerSignup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"/>
+    <ImageView
+        android:id="@+id/imageCentreEnterOtpScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/enterotpcentralimage"
+        app:layout_constraintTop_toBottomOf="@id/textManagerSignup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"/>
+    <TextView
+        android:id="@+id/textPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone number"
+        app:layout_constraintTop_toBottomOf="@id/imageCentre"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/margin30dp"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:textStyle="bold"
+        android:textSize="@dimen/textsizein20sp"/>
+    <TextView
+        android:id="@+id/textVerificationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imageCentreEnterOtpScreen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:text="Enter Verification Code"
+        android:textSize="@dimen/textsizein20sp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enterOtpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textVerificationCode"
+        android:layout_marginTop="@dimen/padding10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/padding10dp"
+        >
+
+        <EditText
+            android:id="@+id/otpBoxFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
+            android:hint="Enter otp"
+            android:inputType="phone"
+            android:background="@drawable/otpboxbackground"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+       <!-- <EditText
+            android:id="@+id/otpBoxtTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:inputType="phone"
+            android:maxLength="1"
+            app:layout_constraintStart_toEndOf="@id/otpBoxtFirst"
+            android:background="@drawable/otpboxbackground"
+            android:layout_marginStart="5dp"/>
+        <EditText
+            android:id="@+id/otpBoxtThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="phone"
+            android:maxLength="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/otpBoxtTwo"
+            android:background="@drawable/otpboxbackground"
+            android:layout_marginStart="5dp"/>
+        <EditText
+            android:id="@+id/otpBoxtFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="phone"
+            android:maxLength="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/otpBoxtThree"
+            android:background="@drawable/otpboxbackground"
+            android:layout_marginStart="5dp"/>
+        <EditText
+            android:id="@+id/otpBoxtFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:inputType="phone"
+            android:maxLength="1"
+            app:layout_constraintStart_toEndOf="@id/otpBoxtFour"
+            android:background="@drawable/otpboxbackground"
+            android:layout_marginStart="5dp"/>
+        <EditText
+            android:id="@+id/otpBoxtSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="phone"
+            android:maxLength="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/otpBoxtFive"
+            android:background="@drawable/otpboxbackground"
+            android:layout_marginStart="5dp"/> -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/otpBoxFirst"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/requestotpbackground"
+            app:backgroundTint="@color/dark_blue"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:text="Submit Otp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutMobileVerify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imageCentre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/height60dp"
+        android:layout_marginStart="@dimen/margin30dp"
+        android:layout_marginEnd="@dimen/margin30dp">
+
+        <EditText
+            android:id="@+id/editTextMobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/enter_mobile_number_edit_text_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="@string/enter_mobile_number"
+            android:padding="18dp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height60dp"
+            android:text="Request Otp"
+            android:background="@drawable/requestotpbackground"
+            app:layout_constraintTop_toBottomOf="@id/editTextMobileNumber"
+            app:backgroundTint="@color/dark_blue"
+            android:textSize="@dimen/btntxtsize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

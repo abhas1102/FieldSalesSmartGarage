@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+<data>
+    <variable
+        name="checkInItemDetails"
+        type="com.example.fieldsalessmartgarage.model.CheckinDetailsModel" />
+</data>
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin20dp"
+    android:backgroundTint="@color/cream_shade2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/nameGarage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{checkInItemDetails.shopName.toString()}"
+            android:textColor="@color/red_shade"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingStart="@dimen/padding10dp"/>
+
+        <TextView
+            android:id="@+id/nameGarageOwner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{checkInItemDetails.shopOwnerName.toString()}"
+            app:layout_constraintTop_toBottomOf="@id/nameGarage"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/padding10dp"
+            android:paddingStart="@dimen/padding10dp"/>
+
+        <TextView
+            android:id="@+id/GarageMobileNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{checkInItemDetails.mobileNumber.toString()}"
+            app:layout_constraintTop_toBottomOf="@id/nameGarageOwner"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/padding10dp"
+            android:paddingStart="@dimen/padding10dp"/>
+
+        <TextView
+            android:id="@+id/timeCheckIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check-in-09:00AM"
+            android:textColor="@color/green_version1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/padding10dp"/>
+
+        <TextView
+            android:id="@+id/timeCheckOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check-out-06:00PM"
+            android:textColor="@color/red_shade"
+            app:layout_constraintTop_toBottomOf="@id/timeCheckIn"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/padding10dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVisitDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visit Details"
+            android:backgroundTint="@color/blue_version1"
+            app:layout_constraintTop_toBottomOf="@id/timeCheckOut"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin20dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCheckoutOnItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btnVisitDetails"
+            android:layout_marginTop="@dimen/margin20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Check out"
+            android:backgroundTint="@color/red_tint"/>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
+</layout>

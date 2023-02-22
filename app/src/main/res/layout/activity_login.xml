@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/height50dp"
+        android:background="@drawable/loginpage_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textLogIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:drawableRight="@drawable/icon_login"
+            android:drawablePadding="@dimen/padding5dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/log_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayoutLogin" />
+
+        <TextView
+            android:id="@+id/textEnterYourPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:text="@string/enter_your_mobile_number"
+            android:textColor="@color/red_shade"
+            android:textSize="@dimen/enter_your_mobile_number"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textLogIn" />
+
+        <EditText
+            android:id="@+id/EdittextPhoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height50dp"
+            android:layout_marginStart="@dimen/margin20dp"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:layout_marginEnd="@dimen/margin20dp"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="@color/white"
+            android:hint="@string/enter_mobile_number"
+            android:paddingStart="@dimen/padding10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textEnterYourPhoneNumber" />
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLoginBeforeOtp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/login_button"
+            android:backgroundTint="@color/red_shade"
+            app:layout_constraintTop_toBottomOf="@id/EdittextPhoneNumber"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Login"
+            app:cornerRadius="@dimen/cornerRadius10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/margin20dp"
+            android:layout_marginEnd="@dimen/margin20dp"
+            android:layout_marginTop="@dimen/margin20dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="@dimen/cancel_button_width"
+            android:layout_height="@dimen/cancel_button_height"
+            android:backgroundTint="@color/purple_700"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/margin20dp"
+            android:text="Cancel"
+            app:cornerRadius="@dimen/cornerRadius10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/margin20dp"
+            android:layout_marginEnd="@dimen/margin20dp"
+           />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutOtp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/height50dp"
+        android:background="@drawable/loginpage_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <TextView
+            android:id="@+id/textEnterYourOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:text="@string/enter_your_otp"
+            android:textColor="@color/red_shade"
+            android:textSize="@dimen/enter_your_mobile_number"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/EdittextOtp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height50dp"
+            android:layout_marginStart="@dimen/margin20dp"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:layout_marginEnd="@dimen/margin20dp"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="@color/white"
+            android:paddingStart="@dimen/padding10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textEnterYourOtp" />
+
+        <TextView
+            android:id="@+id/textResendOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend Otp"
+            android:textColor="@color/red_shade"
+            app:layout_constraintTop_toBottomOf="@id/EdittextOtp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/padding10dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/login_button"
+            android:backgroundTint="@color/red_shade"
+            app:layout_constraintTop_toBottomOf="@id/textResendOtp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Login"
+            app:cornerRadius="@dimen/cornerRadius10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/margin20dp"
+            android:layout_marginEnd="@dimen/margin20dp"
+            android:layout_marginTop="@dimen/margin20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
