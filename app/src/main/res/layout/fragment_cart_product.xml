@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CartProductFragment">
+
+   <TextView
+       android:id="@+id/nameGarageInCartFragment"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="People Automotive"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       android:layout_marginStart="@dimen/margin20dp"
+       android:textSize="@dimen/textsizein20sp"
+       android:layout_marginTop="@dimen/margin20dp"
+       android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/nameOfGarageOwnerInCartFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manoj Chopra"
+        app:layout_constraintTop_toBottomOf="@id/nameGarageInCartFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/margin20dp"
+        android:textSize="@dimen/textsizein20sp"
+        android:layout_marginTop="@dimen/padding10dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/nameGarageInCartFragment"
+        android:text="Date"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:layout_marginStart="30dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/valueOfTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textDate"
+        android:text="2023-02-04"
+        app:layout_constraintStart_toStartOf="@id/textDate"
+        android:textSize="16sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCartFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nameOfGarageOwnerInCartFragment"
+        android:layout_marginTop="@dimen/margin20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/margin20dp"
+        android:layout_marginEnd="@dimen/margin20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
+    <View
+        android:id="@+id/dividerLine1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewCartFragment"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/textSubTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sub Total"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:textSize="@dimen/textsizein20sp"
+        android:layout_marginStart="@dimen/margin20dp"/>
+
+    <TextView
+        android:id="@+id/subTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Rs 400"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:layout_marginEnd="@dimen/margin20dp"/>
+
+    <TextView
+        android:id="@+id/textDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discount"
+        app:layout_constraintTop_toBottomOf="@id/textSubTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:textSize="@dimen/textsizein20sp"
+        android:layout_marginStart="@dimen/margin20dp"/>
+
+    <TextView
+        android:id="@+id/valueDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/subTotalPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="10%"
+        android:textSize="22sp"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:layout_marginEnd="@dimen/margin20dp"/>
+
+   <View
+       android:id="@+id/dividerLine2InCartFragment"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/black"
+       app:layout_constraintTop_toBottomOf="@id/textDiscount"
+       android:layout_marginTop="@dimen/margin20dp"/>
+
+    <TextView
+        android:id="@+id/textTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Price"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine2InCartFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:textSize="@dimen/textsizein20sp"
+        android:layout_marginStart="@dimen/margin20dp"/>
+
+    <TextView
+        android:id="@+id/valueTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine2InCartFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Rs 4000"
+        android:textSize="22sp"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:layout_marginEnd="@dimen/margin20dp"/>
+
+    <TextView
+        android:id="@+id/textTaxesImplied"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taxes Implied"
+        app:layout_constraintTop_toBottomOf="@id/textTotalPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:textSize="@dimen/textsizein20sp"
+        android:layout_marginStart="@dimen/margin20dp"/>
+    <CheckBox
+        android:id="@+id/taxCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textTaxesImplied"
+        app:layout_constraintStart_toStartOf="parent"
+        android:checked="true"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:id="@+id/valueOfPriceWithTaxesImplied"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs 4000"
+        app:layout_constraintTop_toBottomOf="@id/textTaxesImplied"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/padding10dp"
+       android:layout_marginEnd="@dimen/margin20dp"/>
+
+    <TextView
+        android:id="@+id/textCreditsApplied"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credits Applied"
+        app:layout_constraintTop_toBottomOf="@id/taxCheckBox"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:textSize="@dimen/textsizein20sp"
+        android:layout_marginStart="@dimen/margin20dp"/>
+
+    <TextView
+        android:id="@+id/valueCreditsApplied"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/taxCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Rs 4000"
+        android:textSize="22sp"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:layout_marginEnd="@dimen/margin20dp"/>
+    <View
+        android:id="@+id/dividerLine3InCartFragment"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintTop_toBottomOf="@id/textCreditsApplied"
+        android:background="@color/black"
+        android:layout_marginTop="@dimen/padding10dp"/>
+
+    <TextView
+        android:id="@+id/textOrderNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Notes"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine3InCartFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:textSize="@dimen/textsizein20sp"
+        android:layout_marginStart="@dimen/margin20dp"/>
+    <ImageView
+        android:id="@+id/imageEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dividerLine3InCartFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin20dp"
+        android:src="@drawable/ic_location"
+        android:background="@color/black"
+        android:layout_marginTop="@dimen/margin20dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSubmitCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textOrderNotes"
+        android:backgroundTint="@color/blue_version1"
+        android:textColor="@color/white"
+        android:text="Submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/padding10dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

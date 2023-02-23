@@ -20,5 +20,7 @@ data class ItemOffersInHomeFragmentModel(
 )
 data class ProductsInHomeFragment(
     val image: Int,
-    val name: String
+    val name: String,
+    // val quantity:String,
+
 )
