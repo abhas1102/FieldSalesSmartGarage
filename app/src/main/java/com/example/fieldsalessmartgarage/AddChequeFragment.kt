@@ -10,7 +10,7 @@ import com.example.fieldsalessmartgarage.databinding.FragmentAddChequeBinding
 
 
 class AddChequeFragment : Fragment(R.layout.fragment_add_cheque) {
-    private lateinit var binding:FragmentAddChequeBinding
+    private lateinit var binding: FragmentAddChequeBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding= FragmentAddChequeBinding.bind(view)

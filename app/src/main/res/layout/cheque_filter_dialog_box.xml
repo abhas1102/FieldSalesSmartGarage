@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="#D9D9D9"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/dark_blue"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Cheque Filter"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OverDue"
+        android:textColor="@color/dark_blue"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pending"
+        android:textColor="@color/dark_blue"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cleared"
+        android:textColor="@color/dark_blue"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deposited"
+        android:textColor="@color/dark_blue"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bounced"
+        android:textColor="@color/dark_blue"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+</LinearLayout>
